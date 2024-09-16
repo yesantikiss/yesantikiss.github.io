@@ -1,11 +1,13 @@
 const data = [
     {
-        "code" : "TEST",
-        "content" : "<h1>これはテストです</h1>"
+        "code" : "TEST", //入力する用のコード
+        "dummy" : "0", //スタンプを与えず紹介だけするための偽のコード
+        "content" : "<h1>これはテストです</h1>", //中身
     },
     {
         "code" : "AAAA",
-        "content" : '<a href="index.html">わぁ</a>'
+        "dummy" : "1",
+        "content" : '<a href="index.html">わぁ</a>',
     }
 ]
 

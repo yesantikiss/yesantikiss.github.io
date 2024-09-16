@@ -3,14 +3,25 @@
 
     <head>
         <title>梅田デジタルスタンプラリー</title>
+        <link href="style/style.css" rel="stylesheet" />
     </head>
 
     <body>
-        a
-        <form action="card.html" method="get" name="code_input">
-            <input type="text" name="code">
-            <input type="submit" value="入力">
-        </form>
+        <div class="PR">
+            <h1>PR</h1>
+            <a href="index.html">
+                <img src="src/PR2.png" class="PRimg" />
+                <h1 class="PRtitle">テスト</h1>
+                <p class="PRtext">これはテストなんだって</p>
+            </a>
+        </div>
+        <div class="form">
+            <p>コードを入力</p>
+            <form action="card.html" method="get" name="code_input">
+                <input type="text" name="code" placeholder="Enter code" required class="textbox">
+                <input type="submit" value="入力" class="button">
+            </form>
+        </div>
     </body>
 
 </html>

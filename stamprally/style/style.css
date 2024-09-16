@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+
+body, input, input::placeholder, .button {
+    font-family: "Mochiy Pop P One", sans-serif;
+    font-style: normal;
+}
+
+.textbox {
+    width: 10em;
+}
+
+.form, .PR{
+    text-align: center;
+    margin: 30px;
+    border: 0.5em solid #d2691e;
+}
+
+.form {
+    padding-bottom: 30px;
+}
+
+.PR {
+    padding: 15px;
+}
+
+.PRimg {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    filter: brightness(60%);
+    border-radius: 9% / 16%;
+}
+
+.PRtitle {
+    top: 40vw;
+    left: 70px;
+    position: absolute;
+    color: white;
+}
+
+.PRtext {
+    top: 55vw;
+    left: 70px;
+    position: absolute;
+    color: white;
+}
