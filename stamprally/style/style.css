@@ -1,48 +1,94 @@
-@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
 
-body, input, input::placeholder, .button {
-    font-family: "Mochiy Pop P One", sans-serif;
-    font-style: normal;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.textbox {
+body, input, input::placeholder, .button { /*フォント指定*/
+    font-family: "Mochiy Pop One", sans-serif;
+    font-style: normal;
+    font-size: 30px;
+}
+
+body {
+    padding-top: 50px;
+}
+
+.textbox { /*コード*/
     width: 10em;
 }
 
-.form, .PR{
+.form{
     text-align: center;
     margin: 30px;
-    border: 0.5em solid #d2691e;
+    border: 0.5em solid #ff8c00;
+    overflow: hidden;
 }
 
 .form {
     padding-bottom: 30px;
 }
 
-.PR {
-    padding: 15px;
+summary {
+    display: block;
+    list-style: none;
+}
+details summary::-webkit-details-marker {
+    display: none;
 }
 
-.PRimg {
-    aspect-ratio: 16 / 9;
+.menu_li {
+    list-style: none;
+    overflow: hidden;
+    margin-left: 1em;
+    margin-bottom: 0.5em;
+}
+
+details {
+    transition: all 300ms 0s ease;
+    width: auto;
+}
+  
+details:not([open]) {
+    max-height: 50px; 
+}
+  
+details[open] {
+    max-height: 500px; 
+}
+
+summary {
+    cursor: pointer;
+}
+
+.list {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: #f5deb3;
+}
+
+.link {
+    text-decoration: none;
+    color: #000000;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    background-color: #f5deb3;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: relative;
-    filter: brightness(60%);
-    border-radius: 9% / 16%;
+    height: 60px;
+    top: 0;
+    left: 0;
 }
 
-.PRtitle {
-    top: 40vw;
-    left: 70px;
-    position: absolute;
-    color: white;
-}
-
-.PRtext {
-    top: 55vw;
-    left: 70px;
-    position: absolute;
-    color: white;
+.title {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 30px;
 }

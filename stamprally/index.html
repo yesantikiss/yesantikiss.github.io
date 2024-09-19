@@ -7,14 +7,18 @@
     </head>
 
     <body>
-        <div class="PR">
-            <h1>PR</h1>
-            <a href="index.html">
-                <img src="src/PR2.png" class="PRimg" />
-                <h1 class="PRtitle">テスト</h1>
-                <p class="PRtext">これはテストなんだって</p>
-            </a>
-        </div>
+        <header>
+            <details class="menu">
+                <summary class="icon">
+                    <img src="src/Menu icon.svg" />
+                </summary>
+                <div class="list">
+                    <li class="menu_li"><a href="card.html?dummy=0" class="link">test</a></li>
+                    <li class="menu_li"><a href="card.html?dummy=1" class="link">test2</a></li>
+                </div>
+            </details>
+            <span class="title">デジタルスタンプラリー</span>
+        </header>
         <div class="form">
             <p>コードを入力</p>
             <form action="card.html" method="get" name="code_input">
@@ -22,6 +26,7 @@
                 <input type="submit" value="入力" class="button">
             </form>
         </div>
+        <script src="script/animation.js"></script>
     </body>
 
 </html>
