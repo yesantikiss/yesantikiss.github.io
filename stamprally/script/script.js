@@ -11,7 +11,7 @@ window.addEventListener("load",function() {//ページが読み込まれた時�
     if(code === data[i]["code"] || dummy === data[i]["dummy"]) {//コードの確認
       check = true;
       if(!getCookie(data[i]["code"]) && dummy != data[i]["dummy"]) {//Cookieが無いかとダミーではないかの確認
-        this.document.cookie = data[i]["code"] + "=true";
+        this.document.cookie = data[i]["code"] + "=true; " + "max-age=86400";
       }
       id_content.innerHTML = data[i]["content"];//本文を挿入
     }

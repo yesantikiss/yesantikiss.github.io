@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (el.getAttribute("open") !== null) {
         // アコーディオンを閉じるときの処理
         const closingAnim = answer.animate(closingAnimation(answer), animTiming);
+        summary.animate({backgroundColor : "#f5deb3"},animTiming);
 
         closingAnim.onfinish = () => {
           // アニメーションの完了後にopen属性を取り除く
@@ -53,3 +54,4 @@ const openingAnimation = (answer) => [
     opacity: 1,
   },
 ];
+

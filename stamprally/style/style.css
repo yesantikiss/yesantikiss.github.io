@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
+summary {
+    padding: 0px;
+    margin: 0px;
 }
 
 body, input, input::placeholder, .button { /*フォント指定*/
     font-family: "Mochiy Pop One", sans-serif;
     font-style: normal;
-    font-size: 30px;
+    font-size: 50px;
 }
 
 body {
-    padding-top: 50px;
+    padding-top: 120px;
 }
 
 .textbox { /*コード*/
@@ -51,14 +51,23 @@ details {
 }
   
 details:not([open]) {
-    max-height: 50px; 
+    max-height: 500px; 
 }
   
 details[open] {
-    max-height: 500px; 
+    max-height: 3000px; 
+}
+
+details[open] .icon {
+    transform: translateY(0);
+    background-color: #ff8c00;
+    transition: background-color 300ms ease;
 }
 
 summary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
 }
 
@@ -81,7 +90,7 @@ header {
     position: fixed;
     background-color: #f5deb3;
     width: 100%;
-    height: 60px;
+    height: 120px;
     top: 0;
     left: 0;
 }
@@ -90,5 +99,21 @@ header {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    font-size: 30px;
+    font-size: 68px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.icon {
+    display: flex;
+    margin: 0 auto;
+    width: 120px;
+    height: auto;
+    align-items: center;
+    top: -100px;
+}
+
+details, summary {
+    margin: 0;
+    padding: 0;
 }
