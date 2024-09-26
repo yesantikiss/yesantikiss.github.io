@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
 
+:root { /*変数定義*/
+    --text-color: #000000;
+    --background: #ffffff;
+    --header-color: #f5deb3;
+    --icon-background: #000000;
+}
+
+.darkmode { /*ダークモード用*/
+    --text-color: #ffffff;
+    --background: #000000;
+    --header-color: #f5deb3;
+    --icon-background: #ffffff;
+}
+
 summary {
     padding: 0px;
     margin: 0px;
@@ -13,21 +27,22 @@ body, input, input::placeholder, .button { /*フォント指定*/
 
 body {
     padding-top: 120px;
+    touch-action: manipulation;
+    background-color: var(--background);
 }
 
 .textbox { /*コード*/
     width: 10em;
 }
 
-.form{
+.form {
     text-align: center;
-    margin: 30px;
+    margin: 10vw;
     border: 0.5em solid #ff8c00;
     overflow: hidden;
-}
-
-.form {
     padding-bottom: 30px;
+    color: var(--text-color);
+    width: 75vw;
 }
 
 summary {
@@ -76,19 +91,19 @@ summary {
     width: 100vw;
     height: 100vh;
     box-sizing: border-box;
-    background-color: #f5deb3;
+    background-color: var(--header-color);
 }
 
 .link {
     text-decoration: none;
-    color: #000000;
+    color: var(--text-color);
 }
 
 header {
     display: flex;
     align-items: center;
     position: fixed;
-    background-color: #f5deb3;
+    background-color: var(--header-color);
     width: 100%;
     height: 120px;
     top: 0;
@@ -100,7 +115,7 @@ header {
     margin-right: auto;
     text-align: center;
     font-size: 68px;
-    color: #000000;
+    color: var(--text-color);
     text-decoration: none;
 }
 
@@ -116,4 +131,16 @@ header {
 details, summary {
     margin: 0;
     padding: 0;
+}
+
+.changemode {
+    width: 70px;
+    height: 70px;
+    right: 10%;
+    bottom: 10%;
+    text-align: center;
+    position: fixed;
+    border-radius: 50%;
+    font-size: 30px;
+    background-color: var(--icon-background);
 }

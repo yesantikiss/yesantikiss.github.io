@@ -1,5 +1,14 @@
+let isdark = false; //ダークモードか否か
+
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".menu").forEach(function (el) {
+  const btn = document.getElementById("change");
+  if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    isdark = true;
+    btn.innerText = "🌗";
+    document.body.classList.add("darkmode");
+  }
+
+  document.querySelectorAll(".menu").forEach(function (el) {//メニューのアニメーション
     const summary = el.querySelector(".icon");
     const answer = el.querySelector(".list");
     summary.addEventListener("click", (event) => {
@@ -22,6 +31,25 @@ document.addEventListener("DOMContentLoaded", () => {
         const openingAnim = answer.animate(openingAnimation(answer), animTiming);
       }
     });
+  });
+  const body = document.querySelector(".body");
+  btn.addEventListener('click',() => {
+    if(!isdark) {
+      isdark = true;
+      requestAnimationFrame(() => {
+        btn.innerText = "🌗";
+        document.body.classList.add("darkmode");
+        body.animate(changeAnimation(body),animTiming);
+      });
+    }
+    else {
+      isdark = false;
+      requestAnimationFrame(() => {
+        btn.innerText = "🌓";
+        document.body.classList.remove("darkmode");
+        body.animate(changeAnimation(body),animTiming);
+      });
+    }
   });
 });
 
@@ -55,3 +83,16 @@ const openingAnimation = (answer) => [
   },
 ];
 
+// ダークモードの切り替えフレーム
+const changeAnimation = (answer) => [
+  {
+    width: answer.offsetheight + "px",
+    width: answer.offsetWidth + "px",
+    opacity: 0,
+  },
+  {
+    height: 0,
+    width: 0,
+    opacity: 1,
+  },
+];
