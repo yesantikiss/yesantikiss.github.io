@@ -40,7 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.innerText = "🌗";
         document.body.classList.add("darkmode");
         body.animate(changeAnimation(body),animTiming);
-      });
+        
+    });
     }
     else {
       isdark = false;
@@ -83,16 +84,16 @@ const openingAnimation = (answer) => [
   },
 ];
 
-// ダークモードの切り替えフレーム
+// ダークモード切り替え時のキーフレーム
 const changeAnimation = (answer) => [
   {
-    width: answer.offsetheight + "px",
-    width: answer.offsetWidth + "px",
+    width: 0,
+    height: 0,
     opacity: 0,
   },
   {
-    height: 0,
-    width: 0,
+    width: answer.offsetWidth + "px",
+    height: answer.offsetHeight + "px",
     opacity: 1,
   },
 ];

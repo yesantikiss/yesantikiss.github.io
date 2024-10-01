@@ -1,17 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
 
 :root { /*変数定義*/
-    --text-color: #000000;
-    --background: #ffffff;
-    --header-color: #f5deb3;
-    --icon-background: #000000;
+    --text-color: #8D4959;
+    --title-color: #ffffff;
+    --background: #fef8f7;
+    --header-color: #8D4959;
+    --border-color: #ff8c00;
+    --icon-background: #21191b;
+    --list-clicked: #BC0051;
+    --form-text: #22191B;
+    --form-background: #8D4959;
+    --shadow-color: rgba(0, 0, 0, 0.5);
 }
 
 .darkmode { /*ダークモード用*/
     --text-color: #ffffff;
-    --background: #000000;
-    --header-color: #f5deb3;
-    --icon-background: #ffffff;
+    --title-color: #551D2C;
+    --background: #21191b;
+    --header-color: #FFB1C0;
+    --border-color: #ff8c00;
+    --icon-background: #fef8f7;
+    --list-clicked: #FF4D82;
+    --form-text: #191113;
+    --form-background: #EFDEE0;
+    --shadow-color: rgba(255, 255, 255, 0.5);
 }
 
 summary {
@@ -38,11 +50,12 @@ body {
 .form {
     text-align: center;
     margin: 10vw;
-    border: 0.5em solid #ff8c00;
     overflow: hidden;
     padding-bottom: 30px;
-    color: var(--text-color);
+    color: var(--form-text);
+    background-color: var(--form-background);
     width: 75vw;
+    box-shadow: 10px 10px 10px var(--shadow-color);
 }
 
 summary {
@@ -75,7 +88,7 @@ details[open] {
 
 details[open] .icon {
     transform: translateY(0);
-    background-color: #ff8c00;
+    background-color: var(--list-clicked);
     transition: background-color 300ms ease;
 }
 
@@ -96,7 +109,7 @@ summary {
 
 .link {
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--title-color);
 }
 
 header {
@@ -115,7 +128,7 @@ header {
     margin-right: auto;
     text-align: center;
     font-size: 68px;
-    color: var(--text-color);
+    color: var(--title-color);
     text-decoration: none;
 }
 
@@ -134,13 +147,13 @@ details, summary {
 }
 
 .changemode {
-    width: 70px;
-    height: 70px;
+    width: 10vw;
+    height: 10vw;
     right: 10%;
     bottom: 10%;
     text-align: center;
     position: fixed;
     border-radius: 50%;
-    font-size: 30px;
+    font-size: 4.5vw;
     background-color: var(--icon-background);
 }
