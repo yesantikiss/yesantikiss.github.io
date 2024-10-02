@@ -8,14 +8,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add("darkmode");
   }
 
-  document.querySelectorAll(".menu").forEach(function (el) {//メニューのアニメーション
+  document.querySelectorAll(".menu").forEach(function (el){//メニューのアニメーション
     const summary = el.querySelector(".icon");
     const answer = el.querySelector(".list");
     summary.addEventListener("click", (event) => {
       // デフォルトの挙動を無効化
       event.preventDefault();
       // detailsのopen属性を判定
-      if (el.getAttribute("open") !== null) {
+      if (el.getAttribute("open") !== null){
         // アコーディオンを閉じるときの処理
         const closingAnim = answer.animate(closingAnimation(answer), animTiming);
         summary.animate({backgroundColor : "#f5deb3"},animTiming);
@@ -32,14 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-  const body = document.querySelector(".body");
   btn.addEventListener('click',() => {
     if(!isdark) {
       isdark = true;
       requestAnimationFrame(() => {
         btn.innerText = "🌗";
         document.body.classList.add("darkmode");
-        body.animate(changeAnimation(body),animTiming);
+        document.body.animate(changeAnimation(document.body),animTiming);
         
     });
     }
@@ -48,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
       requestAnimationFrame(() => {
         btn.innerText = "🌓";
         document.body.classList.remove("darkmode");
-        body.animate(changeAnimation(body),animTiming);
+        document.body.animate(changeAnimation(document.body),animTiming);
       });
     }
   });
