@@ -151,6 +151,7 @@ details, summary {
 }
 
 .changemode {
+    display: block;
     width: 10vw;
     height: 10vw;
     right: 10%;
@@ -161,4 +162,15 @@ details, summary {
     font-size: 4.5vw;
     background-color: var(--icon-background);
     z-index: 100;
+}
+
+#info {
+    display: block;
+    color: var(--text-color);
+    text-align: center;
+    font-size: 3vw;
+}
+
+#content {
+    color: var(--text-color);
 }

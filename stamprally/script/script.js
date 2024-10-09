@@ -13,16 +13,23 @@ window.addEventListener("load",function(){//ページが読み込まれた時に
       check = true;
       if(!getCookie(data[i]["code"]) && dummy != data[i]["dummy"]){//Cookieが無いかとダミーではないかの確認
         this.document.cookie = data[i]["code"] + "=true; " + "max-age=86400";
+        id_info.innerText = "スタンプをゲットしました！";
+      }
+      if(dummy === data[i]["dummy"]){
+        id_info.innerText = "この企画に参加してスタンプをゲットしよう！";
+      }
+      if(getCookie(data[i]["code"])){
+        id_info.innerText = "もうスタンプを持っているよ";
       }
       id_content.innerHTML = data[i]["content"];//本文を挿入
     }
-    if(getCookie(data[i]["code"])){ //Cookieがある場合
+    if(getCookie(data[i]["code"])){
       this.document.getElementById("c"+ i).style.display = "none";//スタンプを隠す図形を削除し、スタンプを表示
     }
   }
 
   if(check === false){//一致するコードがない場合
-    this.alert("そんなコードねぇよ");
+    this.alert("コードが間違ってます（;;）");
     window.location.replace("index.html");//トップページに戻る
   }
 })
