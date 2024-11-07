@@ -49,11 +49,26 @@ window.addEventListener("load",function(){//ページが読み込まれた時に
       check = true;
       id_info.innerText = "全てのスタンプをゲットしました！";
       id_title.innerText = "おめでとうございます！";
-      id_content.innerHTML = "この画面をスタッフに見せて、景品を受け取ってください！";
+      id_content.innerHTML = '下のボタンを受付で押して、景品を受け取ってください！<button id="exchange">景品を交換</button>';
+      if(getCookie("FES")){
+        this.document.getElementById("exchange").style.display = "none";
+        id_info.innerText = "景品を交換済みです！";
+      }
       id_locate.innerHTML = "場所：受付";
       id_img.style.display = "none";
     }
   }
+  const btn = document.getElementById("exchange");
+  if(!btn) return;
+  btn.addEventListener('click',() => {
+    let result = this.window.confirm("景品を交換しますか？\nもしOKを押すと、このボタンが消えてしまいます。");
+    if(result){
+      this.document.cookie = "FES=true; " + "max-age=86400";
+      btn.style.display = "none";
+      this.alert("この画面をスタッフに見せて、景品を受け取ってください！");
+    }
+  });
+
   if(check === false){//一致するコードがない場合
     this.alert("コードが間違ってます（;;）");
     window.location.replace("index.html");//トップページに戻る

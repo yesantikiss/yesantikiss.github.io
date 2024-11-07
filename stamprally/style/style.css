@@ -198,3 +198,15 @@ th,td {
     border: 1px solid rgb(160 160 160);
     padding: 8px 10px;
 }
+
+#exchange {
+    display: block;
+    color: var(--text-color);
+    background-color: var(--form-background);
+    text-align: center;
+    font-size: 10vw;
+    border: 2vw solid var(--text-color);
+    margin: 3vh auto;
+    padding: 5vw;
+    border-radius: 5vw;
+}
