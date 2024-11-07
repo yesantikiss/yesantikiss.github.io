@@ -7,7 +7,8 @@
     display: flex;
 }
 
-.cardimg {
+.cardimg,#img {
+    display: block;
     margin: 10vw;
     overflow: hidden;
     width: var(--card-width);
@@ -15,11 +16,11 @@
     aspect-ratio: 16 / 9;
 }
 
-#c0,#c1,#c2,#c3,#c4,#c5{
+#c0,#c1,#c2,#c3,#c4,#c5,#c6,#c7,#c8{
     margin: 10vw;
     margin-top: calc(10vw + 120px);
     width: calc(var(--card-width) / 3);
-    height: calc(var(--card-height) / 2);
+    height: calc(var(--card-height) / 3);
     background-color: var(--background);
     position: absolute;
     z-index: 10;
@@ -29,6 +30,9 @@
 #c0{top:0;left:0;}
 #c1{top:0;left:calc(var(--card-width) / 3);}
 #c2{top:0;left:calc(var(--card-width) * 2 / 3);}
-#c3{top:calc(var(--card-height) / 2);left:0;}
-#c4{top:calc(var(--card-height) / 2);left:calc(var(--card-width) / 3);}
-#c5{top:calc(var(--card-height) / 2);left:calc(var(--card-width) * 2 / 3);}
+#c3{top:calc(var(--card-height) / 3);left:0;}
+#c4{top:calc(var(--card-height) / 3);left:calc(var(--card-width) / 3);}
+#c5{top:calc(var(--card-height) / 3);left:calc(var(--card-width) * 2 / 3);}
+#c6{top:calc(var(--card-height) * 2 / 3);left:0;}
+#c7{top:calc(var(--card-height) * 2 / 3);left:calc(var(--card-width) / 3);}
+#c8{top:calc(var(--card-height) * 2 / 3);left:calc(var(--card-width) * 2 / 3);}
