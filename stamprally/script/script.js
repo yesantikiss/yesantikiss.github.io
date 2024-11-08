@@ -4,12 +4,16 @@ const id_title = document.getElementById("title");
 const id_locate = document.getElementById("locate");
 const id_img = document.getElementById("img");
 const id_info = document.getElementById("info");
+const id_return = document.getElementById("return");
+const id_explain = document.getElementById("explain");
+const id_textbox = document.getElementById("textbox");
 
 let params = url.searchParams; //URLSearchParamsオブジェクトを取得
 let code = params.get("code"); //コードを取得
 let dummy = params.get("dummy"); //偽のコードを取得
 let check = false; //コードの存在チェック
 let stampnum = 0; //取得済みスタンプの数
+let content = '下のボタンを受付で押して、景品を受け取ってください！'
 
 window.addEventListener("load",function(){//ページが読み込まれた時に実行
   for(let i = 0;i < Object.keys(data).length;i++){
@@ -40,6 +44,11 @@ window.addEventListener("load",function(){//ページが読み込まれた時に
     }
   }
 
+  if(stampnum == 9) {
+    if(id_return) id_return.innerHTML = '答えを入力しに行く';
+    if(id_explain) id_explain.innerHTML = '問題の答えを入力';
+    if(id_textbox) id_textbox.setAttribute("placeholder", "Enter Answer");
+  }
   if(code == "FES"){
     if(stampnum != 9){
       this.alert("全てのスタンプを集めてください！");
@@ -47,12 +56,14 @@ window.addEventListener("load",function(){//ページが読み込まれた時に
       window.location.replace("index.html");//トップページに戻る
     } else {
       check = true;
+      id_return.style.display = "none";
       id_info.innerText = "全てのスタンプをゲットしました！";
       id_title.innerText = "おめでとうございます！";
-      id_content.innerHTML = '下のボタンを受付で押して、景品を受け取ってください！<button id="exchange">景品を交換</button>';
+      id_content.innerHTML = content + '<button id="exchange">景品を交換</button>';
       if(getCookie("FES")){
         this.document.getElementById("exchange").style.display = "none";
         id_info.innerText = "景品を交換済みです！";
+        id_content.innerHTML = content + '<span id="hid">スタンプラリーを楽しんでくれてありがとう！<br/>プログラムのコードは<a href="https://github.com/yesantikiss/yesantikiss.github.io/tree/main/stamprally">こちら</a>から見れます</span>'
       }
       id_locate.innerHTML = "場所：受付";
       id_img.style.display = "none";
@@ -66,6 +77,8 @@ window.addEventListener("load",function(){//ページが読み込まれた時に
       this.document.cookie = "FES=true; " + "max-age=86400";
       btn.style.display = "none";
       this.alert("この画面をスタッフに見せて、景品を受け取ってください！");
+      id_info.innerText = "景品を交換済みです！";
+      id_content.innerHTML = content + '<span id="hid">スタンプラリーを楽しんでくれてありがとう！<br/>プログラムのコードは<a href="https://github.com/yesantikiss/yesantikiss.github.io/tree/main/stamprally">こちら</a>から見れます</span>'
     }
   });
 

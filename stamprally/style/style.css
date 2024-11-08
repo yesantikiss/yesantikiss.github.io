@@ -199,7 +199,7 @@ th,td {
     padding: 8px 10px;
 }
 
-#exchange {
+#exchange ,#return{
     display: block;
     color: var(--text-color);
     background-color: var(--form-background);
@@ -209,4 +209,13 @@ th,td {
     margin: 3vh auto;
     padding: 5vw;
     border-radius: 5vw;
+}
+#return {
+    font-size: 9vw;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+#id {
+    display: none;
 }
