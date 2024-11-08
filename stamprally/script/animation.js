@@ -2,7 +2,7 @@ let isdark = false; //ダークモードか否か
 
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.getElementById("change");
-  if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  if(window.matchMedia('(prefers-color-scheme: dark)').matches || getCookie("dark")) {
     isdark = true;
     btn.innerText = "🌗";
     document.body.classList.add("darkmode");
@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.innerText = "🌗";
         document.body.classList.add("darkmode");
         document.body.animate(changeAnimation(document.body),animTiming);
-        
     });
     }
     else {

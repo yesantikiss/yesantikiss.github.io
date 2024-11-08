@@ -44,12 +44,12 @@ window.addEventListener("load",function(){//ページが読み込まれた時に
     }
   }
 
-  if(stampnum == 9) {
+  if(stampnum === 9) {
     if(id_return) id_return.innerHTML = '答えを入力しに行く';
     if(id_explain) id_explain.innerHTML = '問題の答えを入力';
     if(id_textbox) id_textbox.setAttribute("placeholder", "Enter Answer");
   }
-  if(code == "FES"){
+  if(code === "FES"){
     if(stampnum != 9){
       this.alert("全てのスタンプを集めてください！");
       check = true;
@@ -69,6 +69,10 @@ window.addEventListener("load",function(){//ページが読み込まれた時に
       id_img.style.display = "none";
     }
   }
+  if(check === false && code){//一致するコードがない場合
+    this.alert("コードが間違ってます（;;）");
+    window.location.replace("index.html");//トップページに戻る
+  }
   const btn = document.getElementById("exchange");
   if(!btn) return;
   btn.addEventListener('click',() => {
@@ -81,9 +85,4 @@ window.addEventListener("load",function(){//ページが読み込まれた時に
       id_content.innerHTML = content + '<span id="hid">スタンプラリーを楽しんでくれてありがとう！<br/>プログラムのコードは<a href="https://github.com/yesantikiss/yesantikiss.github.io/tree/main/stamprally">こちら</a>から見れます</span>'
     }
   });
-
-  if(check === false){//一致するコードがない場合
-    this.alert("コードが間違ってます（;;）");
-    window.location.replace("index.html");//トップページに戻る
-  }
 })
